@@ -1,9 +1,16 @@
-# CAN_27930_Decode
-To decode the message log file between the EV Charger and BMS with GB/T 27930-2015 standard. The source file here is logged and exported via the CANalyzer 12.0 in .asc format.
+This script is designed to decode message log files generated during communication between Electric Vehicle (EV) Chargers and Battery Management Systems (BMS), adhering to the GB/T 27930-2015 standard. The input files are .asc format log files exported from CANalyzer 12.0.
 
-While using CANalyer I find the Database file is not well written and some of the info is missing. Then I started to learn the communication protocal GB/T 27930-2015 and prepare the this simple script to help to decode the important information during charging.
+During initial analysis using CANalyzer, it was identified that the associated database file exhibited structural deficiencies, resulting in missing critical information. To address this, a comprehensive study of the GB/T 27930-2015 communication protocol was undertaken, leading to the development of this script. Its primary purpose is to facilitate the accurate extraction of essential charging-related data.
 
-Basically you just need to export your asc file from CANalyer and run with the main.py following information will be exported:
-Time,U_Req,I_Req,U_CCS,I_CCS,U_BCS,I_BCS,Max_T[C],SOC,Time_Charged[min]
+To utilize the script, export your .asc file from CANalyzer and execute `main.py`. The following key parameters will be exported:
 
-Update 2023.02: Deal with charging data without a full charging procedures.
+*   Time
+*   Requested Voltage (U_Req)
+*   Requested Current (I_Req)
+*   Charger Output Voltage (U_CCS)
+*   Charger Output Current (I_CCS)
+*   Battery Voltage (U_BCS)
+*   Battery Current (I_BCS)
+*   Maximum Temperature (Max_T \[°C\])
+*   State of Charge (SOC)
+*   Time Charged (Time_Charged \[min\])
